@@ -3,7 +3,7 @@ package com.moodanalyse;
 import javax.swing.*;
 
 public class MoodAnalyser {
-    public String analyseMood(String message){
+    public String analyseMood(String message) throws MoodAnalysisException{
      try {
              if (message.contains("SAD"))
              {
@@ -15,7 +15,7 @@ public class MoodAnalyser {
              }
           }catch(NullPointerException e)
           {
-                return "HAPPY";
+              throw new MoodAnalysisException("please enter proper message");
           }
     }
 
