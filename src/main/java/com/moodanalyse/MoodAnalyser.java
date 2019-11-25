@@ -7,6 +7,10 @@ public class MoodAnalyser
     {
         this.message=message;
     }
+
+    public MoodAnalyser() {
+    }
+
     public  String analyseMood(String message) throws MoodAnalysisException
     {
         this.message=message;

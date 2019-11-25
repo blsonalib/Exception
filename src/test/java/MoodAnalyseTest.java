@@ -1,6 +1,7 @@
 import com.moodanalyse.MoodAnalyser;
 import com.moodanalyse.MoodAnalyserFactory;
 import com.moodanalyse.MoodAnalysisException;
+import com.moodanalyse.ObjectReflector;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -45,8 +46,13 @@ public class MoodAnalyseTest {
         }
         catch(MoodAnalysisException e)
         {
-            Assert.assertEquals("please enter proper message",e.getMessage());
+            Assert.assertEquals("please enter proper message" ,e.getMessage());
         }
+    }
+    @Test
+    public void givenMessage_WhenProper_Should_Return_Object_Using_Reflector() throws IllegalAccessException {
+        MoodAnalyser moodAnalyser=new MoodAnalyser();
+        ObjectReflector.dump(moodAnalyser,0);
     }
 }
 
